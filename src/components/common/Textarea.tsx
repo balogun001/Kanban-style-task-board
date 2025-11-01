@@ -24,7 +24,7 @@ const textareaStyles = cva(
       intent: {
         fill: 'bg-gray-100 border-gray-200 focus:border-brand-textInput',
         normal:
-          'border-gray-300 border focus:!outline-none placeholder:text-gray-200  focus:border-brand-orange-800 bg-transparent',
+          'border-gray-300 dark:border-gray-600 border placeholder:text-gray-200 dark:placeholder:text-gray-500 focus:border-gray-400 dark:focus:border-gray-500 bg-transparent dark:bg-gray-800 dark:text-gray-200',
       },
       size: {
         lg: 'h-36',
@@ -68,7 +68,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <label className={classNames('group block', className)}>
         {label && (
-          <p className="mb-2 block text-sm font-medium leading-6 text-gray-700">
+          <p className="mb-2 block text-sm font-medium leading-6 text-gray-700 dark:text-gray-300">
             {label}
           </p>
         )}

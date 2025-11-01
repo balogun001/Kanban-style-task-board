@@ -59,7 +59,7 @@ export const Modal = ({
             >
               <Dialog.Panel
                 className={classNames(
-                  'relative flex max-h-full w-full max-w-lg transform flex-col rounded-lg bg-white p-4 shadow-xl transition-all',
+                  'relative flex max-h-full w-full max-w-lg transform flex-col rounded-lg bg-white dark:bg-gray-900 p-4 shadow-xl transition-all',
                   className,
                 )}
               >

@@ -9,7 +9,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import classNames from 'classnames';
 
 const inputStyles = cva(
-  'w-full appearance-none focus:ring-0 rounded-md font-normal leading-loose px-3 text-sm',
+  'w-full appearance-none focus:ring-0 focus:!outline-none rounded-md font-normal leading-loose px-3 text-sm transition-colors',
   {
     defaultVariants: {
       error: false,
@@ -21,9 +21,9 @@ const inputStyles = cva(
         true: '!border-rose-500',
       },
       intent: {
-        fill: 'bg-gray-100 border-gray-200 focus:border-brand-textInput',
+        fill: 'bg-[#E2E2E2] dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-[#2F3954] dark:text-gray-200 placeholder:text-[#2F3954] dark:placeholder:text-gray-400',
         normal:
-          'border-gray-300 border focus:!outline-none placeholder:text-gray-200  focus:border-brand-orange-800 bg-transparent',
+          'border-gray-300 dark:border-gray-600 border placeholder:text-gray-200 dark:placeholder:text-gray-500 focus:border-gray-400 dark:focus:border-gray-500 bg-transparent dark:bg-gray-800 dark:text-gray-200',
       },
       size: {
         lg: 'h-16',
@@ -31,7 +31,7 @@ const inputStyles = cva(
         sm: 'h-10',
       },
     },
-  },
+  }
 );
 
 export type InputProps = Omit<VariantProps<typeof inputStyles>, 'error'> & {
@@ -61,12 +61,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       isLoading,
       ...rest
     },
-    ref,
+    ref
   ) => {
     return (
       <label className={classNames('group block', className)}>
         {label && (
-          <p className="mb-2 block text-sm font-medium leading-6 text-gray-700">
+          <p className="mb-2 block text-sm font-medium leading-6 text-gray-700 dark:text-gray-300">
             {label}
           </p>
         )}
@@ -82,7 +82,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               {
                 'pl-8': leftIcon,
                 'pr-8': rightIcon,
-              },
+              }
             )}
             ref={ref}
             {...rest}
@@ -114,7 +114,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
       </label>
     );
-  },
+  }
 );
 
 Input.displayName = 'Input';

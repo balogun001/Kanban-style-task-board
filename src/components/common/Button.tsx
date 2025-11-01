@@ -16,20 +16,20 @@ const buttonStyle = cva(
     variants: {
       block: { true: '!w-full' },
       kinds: {
-        normal: 'border-none hover:opacity-70',
-        primary: 'bg-brand-orange-800 text-white hover:bg-opacity-80 shadow-sm',
-        secondary: 'border border-gray-300 hover:opacity-70',
+        normal: 'border-none  hover:opacity-70',
+        primary: 'bg-[#5432D3] text-white hover:bg-opacity-80 shadow-sm',
+        secondary: 'border dark:text-white border-gray-300 hover:opacity-70',
       },
       rounded: {
         true: '!rounded-full',
       },
       size: {
-        lg: 'px-3.5 py-2.5',
+        lg: 'px-8 py-2.5',
         md: 'px-4 py-2',
         sm: 'px-3.5 py-2.5',
       },
     },
-  },
+  }
 );
 
 type Props = VariantProps<typeof buttonStyle> & {
@@ -68,7 +68,7 @@ export function Button({
 
   const style = classNames(
     buttonStyle({ block, kinds, rounded, size }),
-    className,
+    className
   );
   if (href) {
     return (
